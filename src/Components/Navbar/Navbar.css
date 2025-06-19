@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent; /* Transparent Navbar */
+  padding: 20px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: backdrop-filter 0.4s ease-in-out, background-color 0.4s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.scrolled {
+  background-color: rgba(30, 30, 30, 0.8); /* Light Transparent Background */
+  backdrop-filter: blur(10px); /* Light Blur Effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari Support */
+  padding: 20px 30px;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  transition: color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.logo:hover {
+  filter: grayscale(100%);
+}
+
+.nav-links {
+  list-style: none;
+  margin-right: 15px;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  padding: 8px 12px;
+}
+
+.nav-links a:hover {
+  transform: translateY(-3px);
+  filter: grayscale(100%);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
